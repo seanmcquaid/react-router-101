@@ -10,6 +10,7 @@ import Movie from "./Movie";
 
 class App extends Component {
   render() {
+    const superHero="batman";
     // The router goes around everything it needs to control
     return (
       <Router>
@@ -29,9 +30,13 @@ class App extends Component {
         {/* whatever is given as component prop */}
         {/* route is self closing */}
         {/* if you have a path by itself, it will look for that path in the url */}
-          <Route exact path="/" component={Home}/>
+        {/* can use render to pass in props */}
+          <Route exact path="/" render={(props)=><Home superHero={superHero}/>}/>
+          {/* this way of writing an anonymous function is the same as using brackets with RETURN */}
           <Route path="/about" component={About}/>
           <Route path="/movies" component={MovieList}/>
+          {/* :MovieId = wildcard for params */}
+          <Route path="/movies/:movieId" component={Movie}/>
         </div>
       </Router>
     );

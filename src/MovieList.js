@@ -22,13 +22,14 @@ class Movies extends Component{
 	}
 
 	componentWillReceiveProps(newProps){
-		console.log(newProps);
+		// console.log(newProps);
 		// var path = newProps.location.pathname;
 		// var pathArray = path.split('/');
 		// var mid = pathArray[2];
 	}
 
 	render(){
+        // movie, is what we're targeting and index is the counter
 		var movies = this.state.movieList.map((movie, index)=>{
 			return(
 				<Link to={`/movies/${movie.id}`} key={index}>
