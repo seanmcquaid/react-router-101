@@ -4,6 +4,8 @@ import './App.css';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
+import MovieList from "./MovieList";
+import Movie from "./Movie";
 
 
 class App extends Component {
@@ -20,6 +22,7 @@ class App extends Component {
           <li><a href="/about">About</a></li> */}
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
+            <Link to="/movies">Movies</Link>
         </ul>
         {/* Use the Route component to set up a path match*/}
         {/* if the path matches the browser path, it will render */}
@@ -28,6 +31,7 @@ class App extends Component {
         {/* if you have a path by itself, it will look for that path in the url */}
           <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
+          <Route path="/movies" component={MovieList}/>
         </div>
       </Router>
     );
